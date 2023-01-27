@@ -1,0 +1,38 @@
+class cList {
+private:
+    char* data;
+    int size;
+    int capacity;
+
+public:
+    cList();
+    cList(int n);
+    cList(const cList& other);
+    ~cList();
+
+    cList operator+(int n);
+    cList operator+(const cList& other);
+    cList operator-(int n);
+    cList operator-(const cList& other);
+    cList& operator=(int n);
+    cList& operator=(const cList& other);
+    bool find(int n);
+    cList asort();
+    cList reverse();
+};
+
+int main() {
+    cList a;
+    cList b(5);
+    cList c = a;
+    c = a + 5;
+    c = a + b;
+    c = a - 5;
+    c = a - b;
+    a = 5;
+    a = b;
+    bool x = a.find(5);
+    b = a.asort();
+    b = a.reverse();
+    return 0;
+}
